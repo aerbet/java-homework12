@@ -33,16 +33,5 @@ public class Task5 {
         String tmpl = "Максимальное количество осадков: %s | было на %s-й день";
 
         System.out.printf(tmpl, maxIndex, maxIndexDay);
-
-        // for (int i = 0; i < arrValue.length / 2; i++) {
-        //     int rev = arrValue[i];
-
-        //     arrValue[i] = arrValue[arrValue.length - i - 1];
-        //     arrValue[arrValue.length - i - 1] = rev;
-        // }
-
-        // System.out.println(Arrays.toString(arrValue));
-
-        // System.out.println("Самое большое количество осадков: " + arrValue[0]);
     }
 }

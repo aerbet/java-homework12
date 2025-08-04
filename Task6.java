@@ -14,34 +14,32 @@ public class Task6 {
         int[] evenNums = new int[arrLength];
         int[] oddNums = new int[arrLength];
 
+        int posIndex = 0, negIndex = 0, evenIndex = 0, oddIndex = 0;
+
         for (int i = 0; i < numsArr.length; i++) {
             int value = rnd.nextInt(10 - (-10) + 1) - 10;
 
-            numsArr[i] += value;
+            numsArr[i] = value;
 
             if (value < 0) {
-                ngtArr[i] += value;
+                ngtArr[negIndex++] = value;
             } else {
-                posArr[i] += value;
+                posArr[posIndex++] = value;
             }
 
             if (value % 2 == 0) {
-                evenNums[i] += value;
+                evenNums[evenIndex++] = value;
             } else {
-                oddNums[i] += value;
+                oddNums[oddIndex++] = value;
             }
         }
-        int[] newPos= Arrays.stream(posArr).filter(x -> x != 0).toArray();
-        int[] newNeg= Arrays.stream(ngtArr).filter(x -> x != 0).toArray();
-        int[] newArr = Arrays.stream(evenNums).filter(x -> x != 0).toArray();
-        int[] newArr2 = Arrays.stream(oddNums).filter(x -> x != 0).toArray();
 
         String tmpl = "Массив положительных чисел: %s\nМассив отрицательных чисел: %s\n";
-        String tmpl2 = "Количество четных чисел: %d\nКоличество нечетных чисел: %d";
+        String tmpl2 = "Количество четных чисел: %4d\nКоличество нечетных чисел: %2d";
 
-        System.out.println(Arrays.toString(numsArr));
+        System.out.println("Исходный массив: " + Arrays.toString(numsArr) + "\n");
 
-        System.out.printf(tmpl, Arrays.toString(newPos), Arrays.toString(newNeg));
-        System.out.printf(tmpl2, newArr.length, newArr2.length);
+        System.out.printf(tmpl, Arrays.toString(Arrays.copyOf(posArr, posIndex)), Arrays.toString(Arrays.copyOf(ngtArr, negIndex)));
+        System.out.printf(tmpl2, Arrays.copyOf(evenNums, evenIndex).length, Arrays.copyOf(oddNums, oddIndex).length);
     }
 }
