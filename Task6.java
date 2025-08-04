@@ -31,18 +31,17 @@ public class Task6 {
                 oddNums[i] += value;
             }
         }
-
+        int[] newPos= Arrays.stream(posArr).filter(x -> x != 0).toArray();
+        int[] newNeg= Arrays.stream(ngtArr).filter(x -> x != 0).toArray();
         int[] newArr = Arrays.stream(evenNums).filter(x -> x != 0).toArray();
         int[] newArr2 = Arrays.stream(oddNums).filter(x -> x != 0).toArray();
 
-        String tmpl = "Количество четных чисел: %d\nКоличество нечетных чисел: %d";
+        String tmpl = "Массив положительных чисел: %s\nМассив отрицательных чисел: %s\n";
+        String tmpl2 = "Количество четных чисел: %d\nКоличество нечетных чисел: %d";
 
         System.out.println(Arrays.toString(numsArr));
-        System.out.println(Arrays.toString(Arrays.stream(ngtArr).filter(x -> x != 0).toArray()));
-        System.out.println(Arrays.toString(Arrays.stream(posArr).filter(x -> x != 0).toArray()));
-        System.out.println(Arrays.toString(newArr));
-        System.out.println(Arrays.toString(newArr2));
 
-        System.out.printf(tmpl, newArr.length, newArr2.length);
+        System.out.printf(tmpl, Arrays.toString(newPos), Arrays.toString(newNeg));
+        System.out.printf(tmpl2, newArr.length, newArr2.length);
     }
 }
