@@ -1,0 +1,29 @@
+1)  true && (false || (2 < 3))
+    true && (false || true)
+    true && true
+    true
+    Ответ: true
+
+2)  !(3 > 4) && (10 < 9 || true)
+    !(3 > 4) && (false || true)
+    true && true
+    true
+    Ответ: true
+
+3)  (true && 1 != 1) || (false && (25 + 5 > 28))
+    (true && false) || (false && true)
+    false || false
+    false
+    Ответ: false
+
+4)  !((true || false) && !(false && true))
+    !(true) && !(false)
+    false && true
+    false
+    Ответ: false
+
+5)  (true == !false) && ((false == !true) || (null == (28/5 > 50)))
+    (true == !false) && (true || false)
+    true && true
+    true
+    Ответ: true // так было бы, но null не сравнивается с boolean значениями, по этому вывода не будет, будет ошибка.
